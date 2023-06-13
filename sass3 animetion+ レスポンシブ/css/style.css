@@ -1,0 +1,245 @@
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background-color: #f0f0f0;
+}
+
+header {
+  padding: 0px 20px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}
+
+#togul {
+  display: flex;
+  -moz-column-gap: 22px;
+       column-gap: 22px;
+  background-color: #f0efef;
+  border: solid 3px #ffffff;
+  border-radius: 0px 0px 10px 10px;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  margin-left: calc(100% - 220px);
+  padding: 3px 10px;
+  position: relative;
+  top: -8px;
+}
+#togul p {
+  font-family: "Lucida Console", "monospace";
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0px 0px;
+}
+#togul .tog-1 {
+  color: rgb(0, 59, 168);
+}
+#togul .tog-2 {
+  color: rgb(121, 121, 121);
+  position: relative;
+}
+#togul .tog-2::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 14px;
+  background-color: #b8b8b8;
+  position: absolute;
+  top: 0px;
+  left: -10px;
+}
+@media (max-width: 1225px) {
+  #togul {
+    visibility: hidden;
+  }
+}
+
+#header-navi {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -moz-column-gap: 10%;
+       column-gap: 10%;
+  position: relative;
+  z-index: 100;
+}
+#header-navi picture {
+  width: 345px;
+}
+@media screen and (max-width: 1224px) {
+  #header-navi .pc {
+    display: none;
+  }
+}
+#header-navi .sp {
+  width: 150px;
+  position: relative;
+  bottom: 30px;
+  display: none;
+}
+@media screen and (max-width: 1224px) {
+  #header-navi .sp {
+    display: block;
+  }
+}
+#header-navi ul {
+  padding: 0px;
+  display: flex;
+  -moz-column-gap: 32px;
+       column-gap: 32px;
+  background-color: #ffffff;
+  padding: 17px 34px;
+  border-radius: 30px;
+}
+@media (max-width: 1225px) {
+  #header-navi ul {
+    visibility: hidden;
+  }
+}
+#header-navi a {
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  font-family: "YuGothic", "Yu Gothic", "sans-serif";
+  font-weight: bold;
+  font-size: 15px;
+  color: #424242;
+}
+#header-navi a:hover {
+  letter-spacing: 0.15em;
+}
+
+.navi-circle {
+  width: 60px;
+  height: 60px;
+  border: solid 3px #028ae4;
+  background-color: #015994;
+  border-radius: 100vmax;
+  margin: 0 -130px 0 auto;
+  position: relative;
+  top: -90px;
+  display: none;
+  margin: 0;
+}
+@media (max-width: 1225px) {
+  .navi-circle {
+    display: block;
+  }
+}
+
+.site-title {
+  padding: 0px 20px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: -25px;
+}
+.site-title hgroup {
+  z-index: 100;
+  display: inline-block;
+  white-space: nowrap;
+  width: 50%;
+  max-width: 500px;
+  position: relative;
+  top: 180px;
+}
+.site-title hgroup h1 {
+  font-family: "YuGothic", "Yu Gothic", "sans-serif";
+  font-size: 75px;
+  line-height: 1.3;
+  margin: 0 0 40px 0;
+  color: #1a1a1a;
+}
+.site-title hgroup p {
+  margin: 0px;
+  font-family: "YuGothic", "Yu Gothic", "sans-serif";
+  font-size: 20px;
+  color: #1b1b1b;
+  font-weight: 500;
+}
+.site-title figure {
+  display: inline-block;
+  width: 50%;
+  margin: 0px;
+  max-width: 800px;
+  position: relative;
+}
+.site-title figure img {
+  width: 100%;
+}
+
+.mask-a {
+  -webkit-clip-path: polygon(65% 2%, 75% 11%, 28% 50%, 19% 42%);
+          clip-path: polygon(65% 2%, 75% 11%, 28% 50%, 19% 42%);
+  position: absolute;
+}
+
+.mask-b {
+  -webkit-clip-path: polygon(84% 9%, 98% 24%, 33% 74%, 21% 61%);
+          clip-path: polygon(84% 9%, 98% 24%, 33% 74%, 21% 61%);
+  position: absolute;
+}
+
+.mask-c {
+  -webkit-clip-path: polygon(93% 35%, 100% 45%, 53% 82%, 44% 72%);
+          clip-path: polygon(93% 35%, 100% 45%, 53% 82%, 44% 72%);
+  position: absolute;
+}
+
+.mask-d {
+  -webkit-clip-path: circle(6.1% at 23% 45%);
+          clip-path: circle(6.1% at 23% 45%);
+  position: absolute;
+}
+
+.mask-e {
+  -webkit-clip-path: circle(9.1% at 30% 64%);
+          clip-path: circle(9.1% at 30% 64%);
+  position: absolute;
+}
+
+.mask-f {
+  -webkit-clip-path: circle(6.8% at 50% 77%);
+          clip-path: circle(6.8% at 50% 77%);
+}
+
+.red-storn {
+  position: relative;
+  top: 0;
+  right: 0;
+}
+.red-storn .red-storn-1 {
+  width: 110px;
+  height: 110px;
+  background-color: rgb(201, 55, 74);
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+  right: calc(100% + 160px);
+  top: -10px;
+}
+.red-storn .red-storn-2 {
+  width: 110px;
+  height: 110px;
+  background-color: rgb(201, 55, 74);
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+  right: calc(90% - 10px);
+  top: 283px;
+}
+.red-storn .blue-storn {
+  width: 157px;
+  height: 157px;
+  background-color: #015994;
+  border-radius: 50%;
+  z-index: 5;
+  position: absolute;
+  right: calc(100% - 10px);
+  top: 56px;
+}/*# sourceMappingURL=style.css.map */

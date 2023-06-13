@@ -1,0 +1,265 @@
+// 共通部分　liタグの・消し、aタグの＿消し、全体の背景色設定
+li{list-style: none;}
+
+a{text-decoration: none;}
+
+body{background-color: #f0f0f0;}
+
+// ヘッダークエリ
+$pc: 1225px; // PC
+@mixin pc {
+  @media (max-width: ($pc)) {
+    @content;
+  }
+}
+
+// もっと小さいクエリ
+$tab: 750px;
+
+@mixin table {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+// 共通言語
+$font:'YuGothic','Yu Gothic','sans-serif';
+$pad:0px 20px;
+// ヘッダー
+header{
+  padding: $pad;
+  position: sticky;
+  top: 0 ;
+  left: 0 ;
+  z-index: 20;
+}
+
+// トグル部分
+#togul{
+  display: flex;
+  column-gap: 22px;
+  background-color:#f0efef;
+  border: solid 3px  #ffffff;
+  border-radius: 0px 0px 10px 10px;
+  max-width: fit-content;
+  margin-left: calc(100% - 220px);
+  padding: 3px 10px;
+  position: relative;
+  top: -8px;
+
+  p{
+    font-family: "Lucida Console","monospace";
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px 0px;
+  }
+  .tog-1{
+    color: rgb(0, 59, 168);
+  }
+  .tog-2{
+    color: rgb(121, 121, 121);
+    position: relative;
+
+    &::before{
+      content:"";
+    display:inline-block;
+    width:1px;
+    height:14px;
+    background-color:#b8b8b8;
+    position:absolute;
+    top:0px;
+    left:-10px;
+    }
+  }
+  @include pc(){
+    visibility:hidden;
+  }
+}
+
+// ナビゲーション部分
+
+#header-navi{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10%;
+  position: relative;
+  z-index: 100;
+
+
+// picture部分
+  picture{
+    width: 345px;
+  }
+  .pc{
+    @media screen and (max-width:1224px) {
+      display: none;
+    }
+  }
+  .sp{
+    width: 150px;
+    position: relative;
+    bottom: 30px;
+    display: none;
+    @media screen and (max-width:1224px) {
+      display: block;
+    }
+  }
+
+// ul：modal-open部分
+
+  ul{
+    padding: 0px;
+    display: flex;
+    column-gap: 32px;
+    background-color: #ffffff;
+    padding: 17px 34px;
+    border-radius: 30px;
+
+    @include pc(){
+    visibility:hidden;
+      }
+    }
+
+    a{
+    transition: .2s cubic-bezier(0.45, 0, 0.55, 1);
+    font-family: 'YuGothic','Yu Gothic','sans-serif';
+    font-weight: bold;
+    font-size: 15px;
+    color: #424242;
+
+    &:hover{
+      letter-spacing: 0.15em;
+    }
+  }
+}
+
+// クエリ後のメニューボタン
+.navi-circle{
+    width: 60px;
+    height: 60px;
+    border: solid 3px #028ae4;
+    background-color: #015994;
+    border-radius: 100vmax;
+    margin: 0 -130px 0 auto;
+    position: relative;
+    top: -90px;
+    display: none;
+    margin: 0;
+
+    @include pc(){
+      display: block;
+    }
+  }
+
+  // site-title、トップページ部分
+
+  .site-title{
+  padding: $pad;
+  display: flex;
+  justify-content:center ;
+  position: relative;
+  top: -25px;
+
+
+  hgroup{
+    z-index: 100;
+    display: inline-block;
+    white-space: nowrap;
+    width: 50%;
+    max-width: 500px;
+    position: relative;
+    top: 180px;
+// 金融を、もっと面白く
+    h1{
+      font-family: $font;
+      font-size: 75px;
+      line-height: 1.3;
+      margin: 0 0 40px 0;
+      color: #1a1a1a;
+
+    }
+    p{
+      margin: 0px;
+      font-family: $font;
+      font-size: 20px;
+      color: #1b1b1b;
+      font-weight: 500;
+    }
+  }
+  // 横の画像
+  // figureのmax-widthがimgの大きさ
+  figure{
+    display: inline-block;
+    width: 50%;
+    margin: 0px;
+    max-width: 800px;
+    position: relative;
+    img{
+      width: 100%;
+    }
+  }
+}
+// figure、占星術師画像レイヤー部分
+.mask-a{
+    clip-path: polygon(65% 2%, 75% 11%, 28% 50%, 19% 42%);
+    position: absolute;
+  } 
+.mask-b{
+    clip-path: polygon(84% 9%, 98% 24%, 33% 74%, 21% 61%);
+    position: absolute;
+  }
+.mask-c{
+    clip-path: polygon(93% 35%, 100% 45%, 53% 82%, 44% 72%);
+    position: absolute;
+  }
+.mask-d{
+    clip-path: circle(6.1% at 23% 45%);
+    position: absolute;
+  }
+.mask-e{
+    clip-path: circle(9.1% at 30% 64%);
+    position: absolute;
+  }
+.mask-f{
+    clip-path: circle(6.8% at 50% 77%);
+  }
+
+  // 赤丸、青丸部分のmixin
+
+  @mixin storn($size,$colre){
+    width: $size;
+    height: $size;
+    background-color: $colre;
+    border-radius: 50%;
+    z-index: 5;
+  }
+
+  // 赤丸、青丸部分
+
+  .red-storn{
+    position: relative;
+    top: 0;
+    right: 0;
+
+  .red-storn-1{
+    @include storn(110px,rgb(201, 55, 74) );
+    position: absolute;
+    right: calc(100% + 160px);
+    top: -10px;
+  }
+
+  .red-storn-2{
+    @include storn(110px,rgb(201, 55, 74) );
+    position: absolute;
+    right: calc(90% - 10px);
+    top: 283px;
+  }
+
+  .blue-storn{
+    @include storn(157px,#015994 );
+    position: absolute;
+    right: calc(100% - 10px);
+    top: 56px;
+  }
+}
